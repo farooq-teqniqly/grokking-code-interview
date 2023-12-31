@@ -16,6 +16,8 @@ public class ReverseVowelsTests
     {
         ReverseVowels().Should().Be(expected);
         
+        return;
+        
         string ReverseVowels()
         {
             var input = original.ToCharArray();
@@ -41,10 +43,7 @@ public class ReverseVowelsTests
 
                 if (vowels.Contains(input[firstPos]) && vowels.Contains(input[lastPos]))
                 {
-                    var save = input[firstPos];
-                    input[firstPos] = input[lastPos];
-                    input[lastPos] = save;
-
+                    (input[lastPos], input[firstPos]) = (input[firstPos], input[lastPos]);
                     firstPos++;
                     lastPos--;
                 }
