@@ -6,7 +6,7 @@ namespace GrokkingCodeInterview.Tests;
 public class ReverseVowelsTests
 {
     static readonly string vowels = "aeiouAEIOU";
-        
+
     [Theory]
     [InlineData("hello", "holle")]
     [InlineData("AEIOU", "UOIEA")]
@@ -15,9 +15,9 @@ public class ReverseVowelsTests
     public void Can_Reverse_Vowels(string original, string expected)
     {
         ReverseVowels().Should().Be(expected);
-        
+
         return;
-        
+
         string ReverseVowels()
         {
             var input = original.ToCharArray();

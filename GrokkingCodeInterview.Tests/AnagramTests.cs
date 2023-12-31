@@ -23,7 +23,7 @@ public class AnagramTests
 
             var hashSet = new HashSet<char>(s);
 
-            foreach(var ch in t)
+            foreach (var ch in t)
             {
                 if (hashSet.Add(ch))
                 {
