@@ -14,33 +14,31 @@ public class ShortestWordDistanceTests
 
         int MinDistance()
         {
-            var word1Indexes = new List<int>();
-            var word2Indexes = new List<int>();
+            var word1Index = -1;
+            var word2Index = -1;
+            var minDistance = words.Length;
 
             for (var i = 0; i < words.Length; i++)
             {
                 if (words[i] == word1)
                 {
-                    word1Indexes.Add(i);
+                    word1Index = i;
                 }
                 else if (words[i] == word2)
                 {
-                    word2Indexes.Add(i);
+                    word2Index = i;
                 }
-            }
 
-            var minDistance = int.MaxValue;
-
-            for (var i = 0; i < word1Indexes.Count; i++)
-            {
-                for (var j = 0; j < word2Indexes.Count; j++)
+                if (word1Index == -1 || word2Index == -1)
                 {
-                    var distance = Math.Abs(word1Indexes[i] - word2Indexes[j]);
+                    continue;
+                }
 
-                    if (distance < minDistance)
-                    {
-                        minDistance = distance;
-                    }
+                var distance = Math.Abs(word1Index - word2Index);
+
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
                 }
             }
 
